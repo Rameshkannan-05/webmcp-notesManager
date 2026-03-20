@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap");
+@import "tailwindcss";
+
+:root {
+  --pm-bg: #090b14;
+  --pm-bg-soft: #0f1324;
+  --pm-text: #e6e8f2;
+  --pm-muted: #9aa1b6;
+  --pm-accent: #6366f1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  color: var(--pm-text);
+  background:
+    radial-gradient(circle at 12% 15%, rgba(99, 102, 241, 0.22), transparent 42%),
+    radial-gradient(circle at 88% 12%, rgba(56, 189, 248, 0.12), transparent 38%),
+    linear-gradient(180deg, #0a0d17 0%, #090b14 100%);
+  background-attachment: fixed;
+}
+
+.glass-card {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.07),
+    rgba(255, 255, 255, 0.03)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.neon-ring {
+  position: relative;
+  box-shadow:
+    0 0 0 1px rgba(99, 102, 241, 0.3),
+    0 0 22px rgba(99, 102, 241, 0.35);
+}
+
+.neon-ring:hover {
+  box-shadow:
+    0 0 0 1px rgba(99, 102, 241, 0.5),
+    0 0 30px rgba(99, 102, 241, 0.45);
+}
+
+.chat-pulse-ring {
+  position: absolute;
+  inset: -5px;
+  border-radius: 9999px;
+  border: 2px solid rgba(99, 102, 241, 0.5);
+  animation: pulse-ring 2.2s ease-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
